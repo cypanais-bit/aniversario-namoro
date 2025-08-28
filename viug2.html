@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário de Namoro!</title>
+    <style>
+        body {
+            background-color: #fce4ec;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+        h1 {
+            color: #c2185b;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .imagem-casal {
+            width: 90%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        .texto {
+            background-color: rgba(0,0,0,0.6);
+            padding: 15px;
+            border-radius: 10px;
+            width: 90%;
+            margin: 0 auto 20px auto;
+            color: white;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+        .contador {
+            font-size: 1.5em;
+            color: #c2185b;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #c2185b;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+        button:hover {
+            background-color: #ad1457;
+        }
+        @media (max-width: 400px) {
+            .texto {
+                font-size: 0.9em;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>💖 Feliz Aniversário de Namoro! 💖</h1>
+
+    <!-- Imagem -->
+    <img src="Nois.jpg" alt="Nós dois" class="imagem-casal">
+
+    <!-- Texto -->
+    <div class="texto">
+        <p>
+            Vida, hoje completamos 4 meses juntos e eu não consigo expressar em palavras o quanto isso significa para mim.<br>
+            Desde o primeiro instante, eu soube que você seria alguém especial, mas a cada dia eu descubro que você é muito mais do que eu poderia sonhar.<br>
+            Seu sorriso ilumina minha vida, sua voz me acalma e sua presença me completa.<br>
+            Nestes 4 meses, aprendi que felicidade verdadeira é ter você ao meu lado, dividindo momentos simples e construindo lembranças eternas.<br>
+            Eu prometo continuar sendo o homem que você merece, cuidar de você com todo meu amor e transformar cada mês em mais um capítulo lindo da nossa história.<br>
+            Eu te amo hoje, amanhã e para sempre. ❤️
+        </p>
+    </div>
+
+    <!-- Contador -->
+    <div class="contador">
+        Estamos juntos há <span id="meses"></span> meses!
+    </div>
+
+    <!-- Botão música -->
+    <button onclick="document.getElementById('music').play()">▶️ Tocar Música</button>
+
+    <!-- Música -->
+    <audio id="music" loop>
+        <source src="Ed Sheeran - Perfect (online-audio-converter.com).mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <!-- Script contador -->
+    <script>
+        function atualizarMeses() {
+            const dataInicio = new Date(2025, 3, 27); // 27 de Abril de 2025
+            const hoje = new Date();
+
+            let anos = hoje.getFullYear() - dataInicio.getFullYear();
+            let meses = hoje.getMonth() - dataInicio.getMonth();
+
+            if (hoje.getDate() < 27) meses--;
+
+            const totalMeses = anos * 12 + meses;
+            document.getElementById('meses').textContent = totalMeses;
+        }
+
+        atualizarMeses();
+    </script>
+</body>
+</html>
